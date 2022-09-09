@@ -1,4 +1,6 @@
 # Kinesis Firehose requires an S3 bucket to be set as a backup storage location
+resource "random_uuid" "bucket_suffix" {}
+
 module "s3_bucket" {
   source  = "cloudposse/s3-bucket/aws"
   version = "0.44.0"
@@ -10,7 +12,10 @@ module "s3_bucket" {
   name               = "firehose-logs"
   namespace          = "sym"
   stage              = var.environment
-  bucket_name        = "${lower(var.name_prefix)}sym-firehose-logs-${var.environment}"
+
+  # S3 Bucket names must be globally unique across all AWS accounts. Suffix a UUID to ensure uniqueness.
+  bucket_name        = "${lower(var.name_prefix)}sym-firehose-logs-${var.environment}-${random_uuid.bucket_suffix.id}"
+
   additional_tag_map = var.tags
 }
 

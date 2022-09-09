@@ -7,7 +7,7 @@ To provide the Sym Runtime with access to the resources created in this `Connect
 ```hcl
 module "kinesis_firehose_connector" {
   source  = "symopsio/kinesis-firehose-connector/sym"
-  version = ">= 1.0.0"
+  version = ">= 2.0.0"
 
   environment = "sandbox"
 }
