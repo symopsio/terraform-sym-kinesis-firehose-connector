@@ -1,7 +1,7 @@
 # Deprecation Warning
 The `symopsio/kinesis-firehose-connector/sym` module is deprecated as of September 30, 2022. Please migrate to [`symopsio/kinesis-firehose-connector/aws`](https://registry.terraform.io/modules/symopsio/kinesis-firehose-connector/aws/latest). 
 
-This can be done in your module declarations by replacing the symopsio/kinesis-firehose-connector/sym source argument with symopsio/kinesis-firehose-connector/aws.
+This can be done in your module declarations by replacing the `symopsio/kinesis-firehose-connector/sym` source argument with `symopsio/kinesis-firehose-connector/aws`.
 
 ```
 module "kinesis_firehose_connector" {
