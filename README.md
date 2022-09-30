@@ -1,3 +1,16 @@
+# Deprecation Warning
+The `symopsio/kinesis-firehose-connector/sym` module is deprecated as of September 30, 2022. Please migrate to [`symopsio/kinesis-firehose-connector/aws`](https://registry.terraform.io/modules/symopsio/kinesis-firehose-connector/aws/latest). 
+
+This can be done in your module declarations by replacing the `symopsio/kinesis-firehose-connector/sym` source argument with `symopsio/kinesis-firehose-connector/aws`.
+
+```
+module "kinesis_firehose_connector" {
+  source  = "symopsio/kinesis-firehose-connector/aws"
+  version = ">= 3.0.0"
+  # insert the 1 required variable here
+}
+```
+
 # kinesis-firehose-connector
 
 The `kinesis-firehose-connector` module provisions dependencies for creating a Kinesis Firehose. It does NOT create the Firehose itself. You may use the `datadog-connector` for a Firehose which pipes to Datadog, or this connector + a custom Firehose for anything else.
