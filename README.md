@@ -6,7 +6,7 @@ This can be done in your module declarations by replacing the symopsio/kinesis-f
 ```
 module "kinesis_firehose_connector" {
   source  = "symopsio/kinesis-firehose-connector/aws"
-  version = "2.0.0"
+  version = ">= 3.0.0"
   # insert the 1 required variable here
 }
 ```
